@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Solvent oil</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+  <div>
+   
+    <!-- <img class="img-fluid" src="argon.png" alt="New York" style="position: fixed;"> -->
+    <div class="btn-group-vertical">
+      <div class="btn-group">
+          <button type="button" class="btn  argon1" style="background-image: url(1.jpg);"></button>
+          <button type="button" class="btn  argon1" style="background-image: url(2.jpg);"></button>
+          <button type="button" class="btn  argon1" style="background-image: url(3.jpg);"></button>
+          <button type="button" class="btn  argon1" style="background-image: url(4.jpg);"></button>
+        </div> 
+        <div class="btn-group"> 
+          <button type="button" class="btn  argon2" style="background-image: url(5.jpg);" onclick='VoiceAnnouncements("其蒸气与空气形成爆炸性混合物，遇明火、高热能引起燃烧爆炸。与氧化剂发生强烈反应遇高热可能发生聚合反应，放出大量热，引起容器破裂和爆炸。");'></button>
+          <button type="button" class="btn  argon2" style="background-image: url(6.jpg);" onclick='VoiceAnnouncements("本品对皮肤、粘膜有刺激作用，有麻醉作用。吸入高浓度苯乙烯，眼痛、流泪、咽痛、咳嗽，继而头痛、恶心呕吐、全身乏力，严重者眩晕、蹒跚。长期接触可导致乏力、食欲减退，皮肤粗糙、皱裂和增厚。")'></button>
+          <button type="button" class="btn  argon2" style="background-image: url(7.jpg);" onclick='VoiceAnnouncements("储存于阴凉、干燥、通风良好的仓间内。远离火种、热源，防止阳光直射。保持容器密封。与氧化剂、活性金属粉末、食用化学品分开存放，切忌混储。搬运时要轻装轻卸，防止包装及容器损坏。分装和搬运作业要注意个人防护。")'></button>
+          <button type="button" class="btn  argon2" style="background-image: url(8.jpg);" onclick='VoiceAnnouncements("灭火剂:泡沫、二氧化碳、干粉、121 灭火器砂土。")'></button>
+        </div> 
+        <div class="btn-group"> 
+          <button type="button" class="btn  argon3" style="background-image: url(9.jpg);" onclick='VoiceAnnouncements("迅速撤离泄漏污染区人员至安全区，并进行隔离，严格限制出入。切断火源。建议应急处理人员戴自给正压式呼吸器，穿防消防防护服。尽可能切断泄漏源。防止进入限制性空间。小量泄漏:用活性炭或其他惰性材料吸收。也可以用不燃性分散剂制成的乳液冲洗，洗水稀释后放入废水系统。大量泄漏:构筑围堤或挖坑收容，用防爆泵转移到专用收集器内，回收或运至废物处理场所处理。")'></button>
+          <button type="button" class="btn  argon3" style="background-image: url(10.jpg);" onclick='VoiceAnnouncements("工程控制:严加密闭，提供充分的局部排风。提供安全淋浴和洗眼设备，建议佩戴防毒口罩。眼睛防护:戴安全防护眼镜。手防 护:戴橡胶手套。身体防护:穿防毒物渗透工作服,其它:工作现场严禁吸烟、进食和饮水，及时换洗工作服。工作前后不饮酒，用温水洗澡。")'></button>
+        </div> 
+        <div class="btn-group"> 
+          <button type="button" class="btn  argon4" style="background-image: url(11.jpg);" ></button>
+        </div> 
+  </div> 
+  </div>
+   
+    
+
+</body>
+<style>
+  
+  .bak{
+      position: absolute;
+  }
+  .argon1{
+   
+   padding-right: 615%;
+   padding-top: 405%;
+   background-color: rgba(0, 0, 0, 0);
+   
+  }
+  .argon2{
+     
+     padding-right: 615%;
+     padding-top: 505%;
+     background-color: rgba(0, 0, 0, 0); 
+    }
+    .argon3{
+     
+     padding-right: 1254%;
+     padding-top: 379%;
+     background-color: rgba(0, 0, 0, 0); 
+    }
+    .argon4{
+     
+     padding-right: 2533%;
+     padding-top: 181%;
+     background-color: rgba(209, 34, 34, 0); 
+    }
+  .bak1{
+      display: block;
+  }
+   
+ 
+</style>
+<script>
+			
+  var tape = null;//声明一个参数方便可以对当前播放的语音进行暂停，继续播放等操作。
+  function VoiceAnnouncements(text) {
+    if (tape != null) {//防止用户多次点击播放语音播放重复，如果当前语音正在播放则再点击播放时会先判断然后暂停当前播放的音频重新播放
+      if (!tape.paused) {
+        tape.pause();
+      }
+    }
+    
+    var url = "https://dict.youdao.com/dictvoice?audio="+text+"&le=zh"
+    var audio = new Audio(url);
+    tape = audio;
+    audio.src = url;
+    audio.play();//播放音频
+  };
+
+</script>
+
+</html>
